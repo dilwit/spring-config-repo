@@ -1,0 +1,24 @@
+spring:
+  logging:
+    level:
+        org.springframework.web: DEBUG
+   
+server:
+  port: 8762
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    #  Let built-in Eureka Client not to register with ‘itself’, because our application should be acting as a server
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${security.user.name}:${security.user.password}@${eureka.instance.hostname}:${server.port}/eureka/
+      
+security:
+  basic:
+    enabled: true
+  user:
+    name: eureka
+    password: 123456789
