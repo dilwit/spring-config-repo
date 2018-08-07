@@ -1,2 +1,2 @@
 env:
-    message: env config says x-customer staging
+    message: env config says x-customer staging updated on the fly
